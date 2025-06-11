@@ -10,25 +10,23 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: IprGuardians
     ports:
-      - "5435:5432"
+      - "5436:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
 
   app:
     build: .
-    container_name: lexjudis_app
+    container_name: ipr
     restart: always
     depends_on:
       - postgres_db
     environment:
       DATABASE_URL: "postgresql://postgres:postgres@postgres_db:5432/IprGuardians?schema=public"
-      NEXTAUTH_URL: "localhost:1009"
+      NEXTAUTH_URL: "https://iprguardians.com/"
       NEXTAUTH_SECRET: "your-nextauth-secret-key-change-this-in-production"
-      H_USER: "office@lexjudis.com"
-      H_PASS: "Office@lexjudis.com1"
 
     ports:
-      - "1009:3000"
+      - "5555:3000"
     command: ["/bin/sh", "-c", "npx prisma migrate deploy && npm run start"]
 
 volumes:
