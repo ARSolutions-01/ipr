@@ -69,6 +69,7 @@
     "expo-asset": "latest",
     "expo-file-system": "latest",
     "expo-gl": "latest",
+    "framer": "^2.4.1",
     "framer-motion": "latest",
     "froala-editor": "^4.5.0",
     "gsap": "latest",

@@ -6,5 +6,9 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactPageClient />;
+  return (
+    <div className="pt-12">
+      <ContactPageClient />
+    </div>
+  );
 }
