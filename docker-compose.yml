@@ -24,6 +24,11 @@ services:
       DATABASE_URL: "postgresql://postgres:postgres@postgres_db:5432/IprGuardians?schema=public"
       NEXTAUTH_URL: "https://iprguardians.com/"
       NEXTAUTH_SECRET: "your-nextauth-secret-key-change-this-in-production"
+      SMTP_HOST: smtpout.secureserver.net
+      SMTP_PORT: 587
+      SMTP_USER: mail@iprguardians.com
+      SMTP_PASS: Rrajs@2025
+      SMTP_FROM: mail@iprguardians.com
 
     ports:
       - "5555:3000"
